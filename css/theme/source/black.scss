@@ -28,9 +28,9 @@ $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 700;
-$linkColor: lighten( #245563, 20%);
-$linkColorHover: lighten( $linkColor, 15% );
-$selectionBackgroundColor: lighten( $linkColor, 25% );
+$linkColor: lighten( #245563, 35%);
+$linkColorHover: lighten( $linkColor, 10% );
+$selectionBackgroundColor: lighten( $linkColor, 20% );
 
 $heading1Size: 2.618em;
 $heading2Size: 2.618em;
@@ -54,6 +54,12 @@ section.has-light-background {
 
 p {
 	max-width: 16.18em;
+}
+
+.reveal .big-p {
+	font-size: $heading1Size;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 code {

@@ -43,7 +43,10 @@
 				<section>
 					<h1>Planning &amp; Implementing Meaningful UI Animations</h1>
 					<p><a href="https://jamessteinbach.com">James Steinbach</a> | <a href="https://twitter.com/jdsteinbach">@jdsteinbach</a></p>
-					<p><i><a href="http://jds.li/anim">jds.li/anim</a></i></p>
+				</section>
+
+				<section>
+					<p class="big-p"><a href="http://jds.li/anim">jds.li/anim</a></p>
 				</section>
 
 				<section>
@@ -74,7 +77,7 @@
 							<li>Set a client&#8217;s site apart</li>
 							<li>Make it &#8220;pop&#8221;</li>
 							<li>Show off dev skill</li>
-							<li class="fragment">Communicate meaning about content</li>
+							<li class="fragment"><b>Communicate meaning about content</b></li>
 						</ul>
 					 </section>
 
@@ -98,9 +101,9 @@
 					<section>
 						<h3>&#8220;Play with Me&#8221;</h3>
 						<ul>
-							<li>Use motion to show that content is interactive.</li>
-							<li>Connected to <code>:hover</code></li>
-							<li>Links, inputs, buttons</li>
+							<li class="fragment">Use motion to show that content is interactive.</li>
+							<li class="fragment">Connected to <code>:hover</code></li>
+							<li class="fragment">Links, inputs, buttons</li>
 						</ul>
 						<button class="submit-hover fragment"><span>Hover!</span></button>
 					</section>
@@ -108,8 +111,8 @@
 					<section>
 						<h3>&#8220;Ya Done Good, Kid&#8221;</h3>
 						<ul>
-							<li>Use motion to confirm the success/failure of a user&#8217;s action.</li>
-							<li>Shaking submit button if fields don&#8217;t validate</li>
+							<li class="fragment">Use motion to confirm the success/failure of a user&#8217;s action.</li>
+							<li class="fragment">Shaking submit button if fields don&#8217;t validate</li>
 						</ul>
 						<button class="submit-pulse fragment">Success!</button>
 						<button class="submit-shake fragment">Error!</button> 
@@ -118,9 +121,9 @@
 					<section>
 						<h3>&#8220;We&#8217;re Connected&#8221;</h3>
 						<ul>
-							<li>Use motion to show the relationship between pieces of content.</li>
-							<li>Moving captions as carousel images move</li>
-							<li>Transitioning help text as users hover over related elements</li>
+							<li class="fragment">Use motion to show the relationship between pieces of content.</li>
+							<li class="fragment">Moving captions as carousel images move</li>
+							<li class="fragment">Transitioning help text as users hover over related elements</li>
 						</ul>
 						
 					</section>
@@ -128,11 +131,11 @@
 					<section>
 						<h3>&#8220;I&#8217;m Important&#8221;</h3>
 						<ul>
-							<li>Use motion to show which pieces of content deserve the user&#8217;s attention.</li>
-							<li>Growing CTA button</li>
-							<li>Growing active form field</li>
+							<li class="fragment">Use motion to show which pieces of content deserve the user&#8217;s attention.</li>
+							<li class="fragment">Growing CTA button</li>
+							<li class="fragment">Growing active form field</li>
 						</ul>
-						<form action="">
+						<form class="fragment" action="">
 							<input class="input-active" type="text" value="First Name">
 						</form>
 					</section>
@@ -140,18 +143,19 @@
 					<section>
 						<h3>&#8220;I Come from &hellip;&#8221;</h3>
 						<ul>
-							<li>Use motion to show the source of some content.</li>
-							<li>Animating sub-menu on <code>:hover</code> of parent link</li>
+							<li class="fragment">Use motion to show the source of some content.</li>
+							<li class="fragment">Animating sub-menu on <code>:hover</code> of parent link</li>
 						</ul>
 					</section>
 
 					<section>
 						<h3>&#8220;I&#8217;m Going &hellip;&#8221;</h3>
 						<ul>
-							<li>Use motion to show the destination of some content.</li>
-							<li>&#8220;Add to Cart&#8221; button</li>
+							<li class="fragment">Use motion to show the destination of some content.</li>
+							<li class="fragment">&#8220;Add to Cart&#8221; button</li>
 						</ul>
 					</section>
+
 					<section data-background="images/wishlist.gif" data-background-size="contain"></section>
 				</section>
 
@@ -168,8 +172,8 @@
 					<section>
 						<h3>Easing Curves</h3>
 						<ul>
-							<li>Linear motion is flat and lifeless.</li>
-							<li>Easing brings an element of life to animations.</li>
+							<li class="fragment">Linear motion is flat and lifeless.</li>
+							<li class="fragment">Easing brings an element of life to animations.</li>
 						</ul>
 					</section>
 					
@@ -211,7 +215,7 @@
 						<ul>
 							<li><a href="http://cubic-bezier.com/">Cubic-Bezier.com</a></li>
 							<li><a href="http://matthewlein.com/ceaser/">Ceaser</a></li>
-							<li><a href="https://medium.com/@ryan_brownhill/crafting-easing-curves-for-user-interfaces-34f39e1b4a43">Crafting Easing Curves for User Interfaces</a>,<br> Ryan Brownhill</li>
+							<li><a href="http://ryanbrownhill.github.io/animation/fed/2015/05/09/easing-curves.html">Crafting Easing Curves for User Interfaces</a>,<br> Ryan Brownhill</li>
 						</ul>
 					</section>
 
@@ -241,6 +245,19 @@
 
 						<p>Resources: <a href="http://csstriggers.com">CSS Triggers</a>, <a href="http://jankfree.org">Jank Free</a></p>
 					</section>
+
+					<section>
+						<h3>Transitions vs. Animations</h3>
+					</section>
+
+					<section data-background="images/fight.gif"></section>
+					<section>
+						<h3>Transitions vs. Animations</h3>
+						<ul>
+							<li class="fragment"><b>Transitions:</b> simple off/on state changes</li>
+							<li class="fragment"><b>Animations:</b> complex motion,<br> usually tied to a trigger event,<br> differing start/end states</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
@@ -248,12 +265,20 @@
 					<ul>
 						<li>Rachel Nabors: <a href="http://rachelnabors.com/archive">blog</a>, <a href="https://twitter.com/rachelnabors">Twitter</a></li>
 						<li>Val Head: <a href="http://valhead.com/blog/">blog</a>, <a href="http://twitter.com/vlh">Twitter</a>, <a href="http://www.fivesimplesteps.com/products/css-animations">book</a></li>
-						<li>Ryan Brownhill: <a href="http://ryanbrownhill.com/blog/">blog</a>, <a href="https://twitter.com/ryan_brownhill">Twitter</a></li>
+						<li>Ryan Brownhill: <a href="http://ryanbrownhill.com/blog/">blog</a>, <a href="http://ryanbrownhill.github.io/#🙇">other blog(?)</a>, <a href="https://twitter.com/ryan_brownhill">Twitter</a></li>
 						<li>CSS Animation: <a href="http://cssanimation.rocks">site</a>, <a href="https://twitter.com/animation">Twitter</a></li>
 						<li>Inspiration: <a href="http://sixux.com/">Six UX</a>, <a href="http://capptivate.co/">Capptivate</a>, <a href="http://uigifs.com/">uiGIFs</a>, <a href="http://hoverstat.es">Hover States</a></li>
 						<li><a href="http://markgeyer.com/pres/the-art-of-ui-animations/#">The Art of UI Animations</a>, Mark Geyer</li>
 						<li><a href="https://medium.com/@druchtie/animation-interfaces-design-2f039da75eeb">Prototyping Animation</a>, Danny Ruchtie</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>James Steinbach</h2>
+					<h3>Senior Front-End Dev</h3>
+					<h4><a href="https://twitter.com">@jdsteinbach</a></h4>
+					<h4><a href="https://github.com/jdsteinbach">Github</a></h4>
+					<h4><a href="https:jdsteinbach.com">Blog</a></h4>
 				</section>
 
 			</div>
@@ -279,12 +304,9 @@
 				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
 				]
+
 			});
 
 		</script>
