@@ -23,7 +23,7 @@ $headingColor: #fdfdfd;
 
 $mainFontSize: 38px;
 $mainFont: Texta, Proxima Nova, Avenir Next, Avenir, Helvetica, sans-serif;
-$headingFont: Texta, Proxima Nova, Avenir Next, Avenir, Helvetica, sans-serif;
+$headingFont: $mainFont;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
@@ -37,13 +37,16 @@ $heading2Size: 2.618em;
 $heading3Size: 1.618em;
 $heading4Size: 1.0em;
 
+$blockMargin: $mainFontSize * .618;
+$headingMargin: 0 0 $blockMargin;
+
 section.has-light-background {
 	&, h1, h2, h3, h4, h5, h6 {
 		color: #222;
 	}
 }
 
-body {
+.reveal {
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: antialiased;
@@ -60,4 +63,6 @@ code {
 
 // Theme template ------------------------------
 @import "../template/theme";
+@import 'animations';
+
 // ---------------------------------------------

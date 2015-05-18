@@ -1,0 +1,158 @@
+button[class*="submit-"] {
+	display: block;
+	width: 10em;
+	background-color: $selectionBackgroundColor;
+	color: #222;
+	font-size: inherit;
+	font-family: $mainFont;
+	text-transform: uppercase;
+	padding: .25em 1em;
+	margin: 1em auto 2em;
+	font-weight: bold;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.submit-hover {
+	$color: $linkColor;
+	transform: skew(-20deg);
+	color: $color;
+	background-image: linear-gradient(
+		to right,
+		rgba($color,1) 0%,
+		rgba($color,1) 50%,
+		rgba($color,0) 51%,
+		rgba($color,0) 100%
+	);
+	background-size: 250% 100%;
+	background-position: right center;
+	transition: background-position .3s ease-in-out;
+
+	&:hover {
+		background-position: left center;
+	}
+	
+	span {
+		display: inline-block;
+		transform: skew(20deg);
+	}
+}
+
+.submit-pulse {
+	animation: submit-pulse 1s infinite ease-in-out;
+}
+
+.submit-shake {
+	animation: submit-shake 1s infinite;
+}
+
+@keyframes submit-pulse {
+	0%, 20%, 80%, 100% {
+		transform: none;
+	}
+
+	30% {
+		transform: scale(.95);
+	}
+
+	70% {
+		transform: scale(1.05);
+	}
+}
+
+@keyframes submit-shake {
+	0%, 30%, 40%, 50%, 60%, 70%, 100% {
+		transform: translateX(0) rotate(0deg);
+	}
+
+	45%, 65% {
+		transform: translateX(-2.5%) rotate(.5deg);
+	}
+
+	35%, 55% {
+		transform: translateX(2.5%) rotate(-.5deg);
+	}
+}
+
+.input-active {
+	display: block;
+	margin: 1em auto;
+	font-size: inherit;
+	font-family: $mainFont;
+	padding: .125em .25em;
+	line-height: 1;
+	-webkit-appearance: none;
+
+	&:focus {
+		animation: input-active .65s ease-in-out;
+	}
+}
+
+@keyframes input-active {
+	0%, 100% {
+		transform: none;
+	}
+
+	75% {
+		transform: scale(1.05);
+	}
+}
+
+figure[class*="sphere-"] {
+	background: rgba( $linkColor, .25 );
+	margin-bottom: .5em;
+	padding: .5em .25em .25em;
+}
+
+.sphere {
+	width: 1.618em;
+	height: 1.618em;
+	background: $linkColor;
+	display: inline-block;
+	border-radius: 50%;
+	animation: sphere-move 3s infinite;
+
+	$eases: linear, ease-in, ease-out, ease-in-out;
+
+	@each $e in $eases {
+		&-#{$e} & {
+			animation-timing-function: $e;
+		}
+	}
+
+	&-cubic-bezier & {
+		animation-timing-function: cubic-bezier(.6,-0.14,.77,1.29);
+	}
+}
+
+@keyframes sphere-move {
+	0%, 10%, 90%, 100% {
+		transform: translateX(-30vw);
+	}
+
+	40%, 60% {
+		transform: translateX(30vw);
+	}
+}
+
+ul[class*="perf-"] {
+	position: relative;
+	min-width: 51%;
+	padding: .5em 0 .5em 3em;
+	
+	&:not(:first-of-type) {
+		border-top: .125em solid $linkColor;
+	}
+
+	&::before {
+		content: attr(data-emoji);
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin-top: -1em;
+		line-height: 2em;
+		height: 2em;
+	}
+}

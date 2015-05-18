@@ -43,16 +43,51 @@
 				<section>
 					<h1>Planning &amp; Implementing Meaningful UI Animations</h1>
 					<p><a href="https://jamessteinbach.com">James Steinbach</a> | <a href="https://twitter.com/jdsteinbach">@jdsteinbach</a></p>
+					<p><i><a href="http://jds.li/anim">jds.li/anim</a></i></p>
 				</section>
 
 				<section>
-					<h2>Why Do We Animate Elements?</h2>
-					<ul>
-						<li class="fragment">Set a client&#8217;s site apart</li>
-						<li class="fragment">Make it &#8220;pop&#8221;</li>
-						<li class="fragment">Show off dev skill</li>
-						<li class="fragment">Communicate meaning about content</li>
-					</ul>
+					<section>
+						<h2>Why Do We Animate Elements?</h2>
+						<ul>
+							<li class="fragment">Set a client&#8217;s site apart</li>
+							<li class="fragment">Make it &#8220;pop&#8221;</li>
+						</ul>
+					</section>
+					
+					<section data-background="images/pop.gif"></section>
+
+					<section>
+						<h2>Why Do We Animate Elements?</h2>
+						<ul>
+							<li>Set a client&#8217;s site apart</li>
+							<li>Make it &#8220;pop&#8221;</li>
+							<li class="fragment">Show off dev skill</li>
+						</ul>
+					 </section>
+
+ 					<section data-background="images/magic.gif"></section>
+
+					<section>
+						<h2>Why Do We Animate Elements?</h2>
+						<ul>
+							<li>Set a client&#8217;s site apart</li>
+							<li>Make it &#8220;pop&#8221;</li>
+							<li>Show off dev skill</li>
+							<li class="fragment">Communicate meaning about content</li>
+						</ul>
+					 </section>
+
+					 <section>
+					 	<h3>We Make Up Stories</h3>
+					 	<p>Whenever things happen,<br> we automatically invent a narrative<br> to explain those events.</p>
+					 	<p class="fragment"><i><a href="http://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc">post hoc ergo propter hoc</a></i></p>
+					 </section>
+
+					 <section>
+					 	<h3>Animation Tells<br> the Right Story</h3>
+					 	<p>When we animate an interface correctly, we make sure users don&#8217;t make up the wrong story.</p>
+					 </section>
 				</section>
 
 				<section>
@@ -67,12 +102,25 @@
 							<li>Connected to <code>:hover</code></li>
 							<li>Links, inputs, buttons</li>
 						</ul>
+						<button class="submit-hover fragment"><span>Hover!</span></button>
+					</section>
+
+					<section>
+						<h3>&#8220;Ya Done Good, Kid&#8221;</h3>
+						<ul>
+							<li>Use motion to confirm the success/failure of a user&#8217;s action.</li>
+							<li>Shaking submit button if fields don&#8217;t validate</li>
+						</ul>
+						<button class="submit-pulse fragment">Success!</button>
+						<button class="submit-shake fragment">Error!</button> 
 					</section>
 					
 					<section>
 						<h3>&#8220;We&#8217;re Connected&#8221;</h3>
 						<ul>
 							<li>Use motion to show the relationship between pieces of content.</li>
+							<li>Moving captions as carousel images move</li>
+							<li>Transitioning help text as users hover over related elements</li>
 						</ul>
 						
 					</section>
@@ -81,13 +129,19 @@
 						<h3>&#8220;I&#8217;m Important&#8221;</h3>
 						<ul>
 							<li>Use motion to show which pieces of content deserve the user&#8217;s attention.</li>
+							<li>Growing CTA button</li>
+							<li>Growing active form field</li>
 						</ul>
+						<form action="">
+							<input class="input-active" type="text" value="First Name">
+						</form>
 					</section>
 
 					<section>
 						<h3>&#8220;I Come from &hellip;&#8221;</h3>
 						<ul>
 							<li>Use motion to show the source of some content.</li>
+							<li>Animating sub-menu on <code>:hover</code> of parent link</li>
 						</ul>
 					</section>
 
@@ -95,16 +149,10 @@
 						<h3>&#8220;I&#8217;m Going &hellip;&#8221;</h3>
 						<ul>
 							<li>Use motion to show the destination of some content.</li>
-							<li>Add to Cart</li>
+							<li>&#8220;Add to Cart&#8221; button</li>
 						</ul>
 					</section>
-				
-					<section>
-						<h3>&#8220;I&#8217;m Going &hellip;&#8221;</h3>
-						<ul>
-							<li>Use motion to show the destination of some content.</li>
-						</ul>
-					</section>
+					<section data-background="images/wishlist.gif" data-background-size="contain"></section>
 				</section>
 
 				<section>
@@ -114,10 +162,84 @@
 
 					<section>
 						<h3>Give It Life</h3>
+						<iframe src="https://player.vimeo.com/video/93206523" width="500" height="198" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><small><a href="https://vimeo.com/93206523">The illusion of life</a> from <a href="https://vimeo.com/centodesign">cento lodigiani</a> on <a href="https://vimeo.com">Vimeo</a>.</small></p>
+					</section>
+
+					<section>
+						<h3>Easing Curves</h3>
+						<ul>
+							<li>Linear motion is flat and lifeless.</li>
+							<li>Easing brings an element of life to animations.</li>
+						</ul>
+					</section>
+					
+					<section>
+						<figure class="sphere-linear">
+							<div class="sphere"></div>
+							<figcaption><code>animation-timing-function: linear;</code></figcaption>
+						</figure>
+						<figure class="sphere-ease-in fragment">
+							<div class="sphere"></div>
+							<figcaption><code>animation-timing-function: ease-in;</code></figcaption>
+						</figure>
+						<figure class="sphere-ease-out fragment">
+							<div class="sphere"></div>
+							<figcaption><code>animation-timing-function: ease-out;</code></figcaption>
+						</figure>
+						<figure class="sphere-ease-in-out fragment">
+							<div class="sphere"></div>
+							<figcaption><code>animation-timing-function: ease-in-out;</code></figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h3>Cubic Bezier Curves</h3>
+						<img src="/images/cb1.jpg" alt="Image of a Cubic Bezier Curve">
+					</section>
+
+					<section>
+						<h3>More Cubic Bezier Curves</h3>
+						<img src="/images/cb2.jpg" alt="Image of another Cubic Bezier Curve">
+					</section>
+
+					<section>
+						<h3>Building Your Own</h3>
+						<figure class="sphere-cubic-bezier">
+							<div class="sphere"></div>
+							<figcaption><code>animation-timing-function: <br>cubic-bezier(.6,-0.14,.77,1.29);</code></figcaption>
+						</figure>
+						<ul>
+							<li><a href="http://cubic-bezier.com/">Cubic-Bezier.com</a></li>
+							<li><a href="http://matthewlein.com/ceaser/">Ceaser</a></li>
+							<li><a href="https://medium.com/@ryan_brownhill/crafting-easing-curves-for-user-interfaces-34f39e1b4a43">Crafting Easing Curves for User Interfaces</a>,<br> Ryan Brownhill</li>
+						</ul>
 					</section>
 
 					<section>
 						<h3>Make It Smooth</h3>
+						<blockquote><p>&#8220;do the performance its good ok&#8221;</p>
+						<footer>
+							<cite>
+								<a href="https://twitter.com/Tevko/status/600313265281998848">~ Tim</a>
+							</cite>
+						</footer></blockquote>
+					</section>
+					
+					<section>
+						<h3>Make It Smooth</h3>
+						<ul class="perf-good" data-emoji="👍">
+							<li><code>opacity</code></li>
+							<li><code>transform</code></li>
+						</ul>
+						<ul class="perf-fair fragment" data-emoji="😐">
+							<li><code>[*-]color</code></li>
+						</ul>
+						<ul class="perf-bad fragment" data-emoji="😡">
+							<li><code>box-shadow</code></li>
+							<li><code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></li>
+						</ul>
+
+						<p>Resources: <a href="http://csstriggers.com">CSS Triggers</a>, <a href="http://jankfree.org">Jank Free</a></p>
 					</section>
 				</section>
 
@@ -128,8 +250,9 @@
 						<li>Val Head: <a href="http://valhead.com/blog/">blog</a>, <a href="http://twitter.com/vlh">Twitter</a>, <a href="http://www.fivesimplesteps.com/products/css-animations">book</a></li>
 						<li>Ryan Brownhill: <a href="http://ryanbrownhill.com/blog/">blog</a>, <a href="https://twitter.com/ryan_brownhill">Twitter</a></li>
 						<li>CSS Animation: <a href="http://cssanimation.rocks">site</a>, <a href="https://twitter.com/animation">Twitter</a></li>
+						<li>Inspiration: <a href="http://sixux.com/">Six UX</a>, <a href="http://capptivate.co/">Capptivate</a>, <a href="http://uigifs.com/">uiGIFs</a>, <a href="http://hoverstat.es">Hover States</a></li>
 						<li><a href="http://markgeyer.com/pres/the-art-of-ui-animations/#">The Art of UI Animations</a>, Mark Geyer</li>
-						<li><a href="http://www.markwallis.ie/blog/the-illusion-of-life-and-ui-motion-design/">The Illusion of Life and UI Motion Design</a>, Mark Wallis</li>
+						<li><a href="https://medium.com/@druchtie/animation-interfaces-design-2f039da75eeb">Prototyping Animation</a>, Danny Ruchtie</li>
 					</ul>
 				</section>
 
@@ -164,6 +287,9 @@
 				]
 			});
 
+		</script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-43397146-5', 'auto'); ga('send', 'pageview');
 		</script>
 
 	</body>
