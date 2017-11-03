@@ -70,6 +70,11 @@ body {
   font-weight: normal;
   color: #fdfdfd; }
 
+::-moz-selection {
+  color: #fff;
+  background: #badce6;
+  text-shadow: none; }
+
 ::selection {
   color: #fff;
   background: #badce6;
@@ -233,8 +238,6 @@ body {
 .reveal a {
   color: #6fb7cb;
   text-decoration: none;
-  -webkit-transition: color 0.15s ease;
-  -moz-transition: color 0.15s ease;
   transition: color 0.15s ease; }
 
 .reveal a:hover {
@@ -256,8 +259,6 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal a img {
-  -webkit-transition: all 0.15s linear;
-  -moz-transition: all 0.15s linear;
   transition: all 0.15s linear; }
 
 .reveal a:hover img {
@@ -300,8 +301,6 @@ body {
 
 .reveal .progress span {
   background: #6fb7cb;
-  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
 /*********************************************
@@ -326,7 +325,9 @@ button[class*="submit-"] {
   box-shadow: none; }
 
 .submit-hover {
-  transform: skew(-20deg);
+  -webkit-transform: skew(-20deg);
+      -ms-transform: skew(-20deg);
+          transform: skew(-20deg);
   color: #6fb7cb;
   background-image: linear-gradient(to right, #6fb7cb 0%, #6fb7cb 50%, rgba(110, 182, 202, 0) 51%, rgba(110, 182, 202, 0) 100%);
   background-size: 250% 100%;
@@ -336,33 +337,69 @@ button[class*="submit-"] {
     background-position: left center; }
   .submit-hover span {
     display: inline-block;
-    transform: skew(20deg); }
+    -webkit-transform: skew(20deg);
+        -ms-transform: skew(20deg);
+            transform: skew(20deg); }
 
 .submit-pulse {
-  animation: submit-pulse 1s infinite ease-in-out; }
+  -webkit-animation: submit-pulse 1s infinite ease-in-out;
+          animation: submit-pulse 1s infinite ease-in-out; }
 
 .submit-shake {
-  animation: submit-shake 1s infinite; }
+  -webkit-animation: submit-shake 1s infinite;
+          animation: submit-shake 1s infinite; }
+
+@-webkit-keyframes submit-pulse {
+  0%, 20%, 80%, 100% {
+    -webkit-transform: none;
+            transform: none; }
+
+  30% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+
+  70% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); } }
 
 @keyframes submit-pulse {
   0%, 20%, 80%, 100% {
-    transform: none; }
+    -webkit-transform: none;
+            transform: none; }
 
   30% {
-    transform: scale(0.95); }
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
 
   70% {
-    transform: scale(1.05); } }
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); } }
+
+@-webkit-keyframes submit-shake {
+  0%, 30%, 40%, 50%, 60%, 70%, 100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg); }
+
+  45%, 65% {
+    -webkit-transform: translateX(-2.5%) rotate(0.5deg);
+            transform: translateX(-2.5%) rotate(0.5deg); }
+
+  35%, 55% {
+    -webkit-transform: translateX(2.5%) rotate(-0.5deg);
+            transform: translateX(2.5%) rotate(-0.5deg); } }
 
 @keyframes submit-shake {
   0%, 30%, 40%, 50%, 60%, 70%, 100% {
-    transform: translateX(0) rotate(0deg); }
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg); }
 
   45%, 65% {
-    transform: translateX(-2.5%) rotate(0.5deg); }
+    -webkit-transform: translateX(-2.5%) rotate(0.5deg);
+            transform: translateX(-2.5%) rotate(0.5deg); }
 
   35%, 55% {
-    transform: translateX(2.5%) rotate(-0.5deg); } }
+    -webkit-transform: translateX(2.5%) rotate(-0.5deg);
+            transform: translateX(2.5%) rotate(-0.5deg); } }
 
 .input-active {
   display: block;
@@ -373,14 +410,26 @@ button[class*="submit-"] {
   line-height: 1;
   -webkit-appearance: none; }
   .input-active:focus {
-    animation: input-active 0.65s ease-in-out; }
+    -webkit-animation: input-active 0.65s ease-in-out;
+            animation: input-active 0.65s ease-in-out; }
+
+@-webkit-keyframes input-active {
+  0%, 100% {
+    -webkit-transform: none;
+            transform: none; }
+
+  75% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); } }
 
 @keyframes input-active {
   0%, 100% {
-    transform: none; }
+    -webkit-transform: none;
+            transform: none; }
 
   75% {
-    transform: scale(1.05); } }
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); } }
 
 figure[class*="sphere-"] {
   background: rgba(110, 182, 202, 0.25);
@@ -393,24 +442,41 @@ figure[class*="sphere-"] {
   background: #6fb7cb;
   display: inline-block;
   border-radius: 50%;
-  animation: sphere-move 3s infinite; }
+  -webkit-animation: sphere-move 3s infinite;
+          animation: sphere-move 3s infinite; }
   .sphere-linear .sphere {
-    animation-timing-function: linear; }
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
   .sphere-ease-in .sphere {
-    animation-timing-function: ease-in; }
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
   .sphere-ease-out .sphere {
-    animation-timing-function: ease-out; }
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
   .sphere-ease-in-out .sphere {
-    animation-timing-function: ease-in-out; }
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out; }
   .sphere-cubic-bezier .sphere {
-    animation-timing-function: cubic-bezier(0.6, -0.14, 0.77, 1.29); }
+    -webkit-animation-timing-function: cubic-bezier(0.6, -0.14, 0.77, 1.29);
+            animation-timing-function: cubic-bezier(0.6, -0.14, 0.77, 1.29); }
+
+@-webkit-keyframes sphere-move {
+  0%, 10%, 90%, 100% {
+    -webkit-transform: translateX(-30vw);
+            transform: translateX(-30vw); }
+
+  40%, 60% {
+    -webkit-transform: translateX(30vw);
+            transform: translateX(30vw); } }
 
 @keyframes sphere-move {
   0%, 10%, 90%, 100% {
-    transform: translateX(-30vw); }
+    -webkit-transform: translateX(-30vw);
+            transform: translateX(-30vw); }
 
   40%, 60% {
-    transform: translateX(30vw); } }
+    -webkit-transform: translateX(30vw);
+            transform: translateX(30vw); } }
 
 ul[class*="perf-"] {
   position: relative;
