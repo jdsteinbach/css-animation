@@ -1,0 +1,90 @@
+@use "sass:list";
+@use "sass:math";
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+//@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+@import 'fonts';
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #222;
+
+$mainColor: #fdfdfd;
+$headingColor: #fdfdfd;
+
+$mainFontSize: 38px;
+$mainFont: Texta, Proxima Nova, Avenir Next, Avenir, Helvetica, sans-serif;
+$headingFont: $mainFont;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 700;
+$linkColor: lighten( #245563, 35%);
+$linkColorHover: lighten( $linkColor, 10% );
+$selectionBackgroundColor: lighten( $linkColor, 20% );
+
+$heading1Size: 2.618em;
+$heading2Size: 2.618em;
+$heading3Size: 1.618em;
+$heading4Size: 1.0em;
+
+$blockMargin: $mainFontSize * .618;
+$headingMargin: 0 0 $blockMargin;
+
+section.has-light-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #222;
+	}
+}
+
+.reveal {
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: antialiased;
+}
+
+.reveal .slides {
+  text-align: center;
+}
+
+.reveal .slides p {
+  margin-right: auto;
+  margin-left: auto;
+	max-width: 16.18em;
+}
+
+.reveal .big-p {
+	font-size: $heading1Size;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+i {
+  font-style: italic;
+}
+
+b {
+  font-weight: bold;
+}
+
+code {
+	font-family: Input Code, Source Code Pro, monospace !important;
+	font-size: 80% !important;
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+@import 'animations';
+
+// ---------------------------------------------

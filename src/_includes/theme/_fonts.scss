@@ -1,0 +1,24 @@
+@mixin fonts($family, $file, $style, $weight) {
+	@font-face {
+		font-family: $family;
+		src: url("/webfonts/#{$file}.woff2") format("woff2"),
+			url("/webfonts/#{$file}.woff") format("woff");
+		font-style: $style;
+		font-weight: $weight;
+	}
+}
+
+@include fonts(Texta, 2D4C2D_1_0, italic, bold);
+
+@include fonts(Texta, 2D4C2D_4_0, normal, bold);
+
+@include fonts(Texta, 2D4C2D_A_0, italic, 300);
+
+@include fonts(Texta, 2D4C2D_B_0, normal, 300);
+
+@font-face {
+	font-family: Input Code;
+	src: url("/webfonts/InputSans-ExtraLight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
