@@ -1,0 +1,578 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ */
+@font-face {
+  font-family: Texta;
+  src: url("/webfonts/2D4C2D_1_0.woff2") format("woff2"), url("/webfonts/2D4C2D_1_0.woff") format("woff");
+  font-style: italic;
+  font-weight: bold;
+}
+@font-face {
+  font-family: Texta;
+  src: url("/webfonts/2D4C2D_4_0.woff2") format("woff2"), url("/webfonts/2D4C2D_4_0.woff") format("woff");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: Texta;
+  src: url("/webfonts/2D4C2D_A_0.woff2") format("woff2"), url("/webfonts/2D4C2D_A_0.woff") format("woff");
+  font-style: italic;
+  font-weight: 300;
+}
+@font-face {
+  font-family: Texta;
+  src: url("/webfonts/2D4C2D_B_0.woff2") format("woff2"), url("/webfonts/2D4C2D_B_0.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: IBM Plex Mono;
+  src: url("/webfonts/IBMPlexMono-Light.woff2") format("woff2"), url("/webfonts/IBMPlexMono-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+  color: #222;
+}
+
+.reveal {
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+}
+
+.reveal .slides {
+  text-align: center;
+}
+
+.reveal .slides p {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 16.18em;
+}
+
+.reveal .big-p {
+  font-size: 2.618em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+i {
+  font-style: italic;
+}
+
+b {
+  font-weight: bold;
+}
+
+code {
+  font-family: IBM Plex Mono, Source Code Pro, monospace !important;
+  font-size: 80% !important;
+}
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: #222;
+  background-color: #222;
+}
+
+.reveal {
+  font-family: Texta, Proxima Nova, Avenir Next, Avenir, Helvetica, sans-serif;
+  font-size: 38px;
+  font-weight: normal;
+  color: #fdfdfd;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #badce6;
+  text-shadow: none;
+}
+
+::selection {
+  color: #fff;
+  background: #badce6;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #badce6;
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 23.484px;
+  color: #fdfdfd;
+  font-family: Texta, Proxima Nova, Avenir Next, Avenir, Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow: none;
+  word-wrap: break-word;
+}
+
+.reveal h1 {
+  font-size: 2.618em;
+}
+
+.reveal h2 {
+  font-size: 2.618em;
+}
+
+.reveal h3 {
+  font-size: 1.618em;
+}
+
+.reveal h4 {
+  font-size: 1em;
+}
+
+.reveal h1 {
+  text-shadow: none;
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: 23.484px 0;
+  line-height: 1.3;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: bold;
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc;
+}
+
+.reveal ul ul {
+  list-style-type: square;
+}
+
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+
+.reveal dt {
+  font-weight: bold;
+}
+
+.reveal dd {
+  margin-left: 40px;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 23.484px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+.reveal q {
+  font-style: italic;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 23.484px auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+  font-family: monospace;
+  text-transform: none;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+}
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.reveal table th {
+  font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+.reveal table th[align=center],
+.reveal table td[align=center] {
+  text-align: center;
+}
+
+.reveal table th[align=right],
+.reveal table td[align=right] {
+  text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+
+.reveal small * {
+  vertical-align: top;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #6fb6cb;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: #94c9d8;
+  text-shadow: none;
+  border: none;
+}
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #3f95ae;
+}
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #fdfdfd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal section img.plain {
+  border: 0;
+  box-shadow: none;
+}
+
+.reveal a img {
+  transition: all 0.15s linear;
+}
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #6fb6cb;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: #6fb6cb;
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #6fb6cb;
+}
+
+.reveal .progress span {
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: #222;
+  }
+}
+button[class*=submit-] {
+  display: block;
+  width: 10em;
+  background-color: #badce6;
+  color: #222;
+  font-size: inherit;
+  font-family: Texta, Proxima Nova, Avenir Next, Avenir, Helvetica, sans-serif;
+  text-transform: uppercase;
+  padding: 0.25em 1em;
+  margin: 1em auto 2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.submit-hover {
+  transform: skew(-20deg);
+  color: #6fb6cb;
+  background-image: linear-gradient(to right, #6fb6cb 0%, #6fb6cb 50%, rgba(111, 182, 203, 0) 51%, rgba(111, 182, 203, 0) 100%);
+  background-size: 250% 100%;
+  background-position: right center;
+  transition: background-position 0.3s ease-in-out;
+}
+.submit-hover:hover {
+  background-position: left center;
+}
+.submit-hover span {
+  display: inline-block;
+  transform: skew(20deg);
+}
+
+.submit-pulse {
+  -webkit-animation: submit-pulse 1s infinite ease-in-out;
+          animation: submit-pulse 1s infinite ease-in-out;
+}
+
+.submit-shake {
+  -webkit-animation: submit-shake 1s infinite;
+          animation: submit-shake 1s infinite;
+}
+
+@-webkit-keyframes submit-pulse {
+  0%, 20%, 80%, 100% {
+    transform: none;
+  }
+  30% {
+    transform: scale(0.95);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes submit-pulse {
+  0%, 20%, 80%, 100% {
+    transform: none;
+  }
+  30% {
+    transform: scale(0.95);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+}
+@-webkit-keyframes submit-shake {
+  0%, 30%, 40%, 50%, 60%, 70%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  45%, 65% {
+    transform: translateX(-2.5%) rotate(0.5deg);
+  }
+  35%, 55% {
+    transform: translateX(2.5%) rotate(-0.5deg);
+  }
+}
+@keyframes submit-shake {
+  0%, 30%, 40%, 50%, 60%, 70%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  45%, 65% {
+    transform: translateX(-2.5%) rotate(0.5deg);
+  }
+  35%, 55% {
+    transform: translateX(2.5%) rotate(-0.5deg);
+  }
+}
+.input-active {
+  display: block;
+  margin: 1em auto;
+  font-size: inherit;
+  font-family: Texta, Proxima Nova, Avenir Next, Avenir, Helvetica, sans-serif;
+  padding: 0.125em 0.25em;
+  line-height: 1;
+  -webkit-appearance: none;
+}
+.input-active:focus {
+  -webkit-animation: input-active 0.65s ease-in-out;
+          animation: input-active 0.65s ease-in-out;
+}
+
+@-webkit-keyframes input-active {
+  0%, 100% {
+    transform: none;
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes input-active {
+  0%, 100% {
+    transform: none;
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+figure[class*=sphere-] {
+  background: rgba(111, 182, 203, 0.25);
+  margin-bottom: 0.5em;
+  padding: 0.5em 0.25em 0.25em;
+}
+
+.sphere {
+  width: 1.618em;
+  height: 1.618em;
+  background: #6fb6cb;
+  display: inline-block;
+  border-radius: 50%;
+  -webkit-animation: sphere-move 3s infinite;
+          animation: sphere-move 3s infinite;
+}
+.sphere-linear .sphere {
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+.sphere-ease-in .sphere {
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+.sphere-ease-out .sphere {
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+.sphere-ease-in-out .sphere {
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+.sphere-cubic-bezier .sphere {
+  -webkit-animation-timing-function: cubic-bezier(0.6, -0.14, 0.77, 1.29);
+          animation-timing-function: cubic-bezier(0.6, -0.14, 0.77, 1.29);
+}
+
+@-webkit-keyframes sphere-move {
+  0%, 10%, 90%, 100% {
+    transform: translateX(-30vw);
+  }
+  40%, 60% {
+    transform: translateX(30vw);
+  }
+}
+
+@keyframes sphere-move {
+  0%, 10%, 90%, 100% {
+    transform: translateX(-30vw);
+  }
+  40%, 60% {
+    transform: translateX(30vw);
+  }
+}
+ul[class*=perf-] {
+  position: relative;
+  min-width: 51%;
+  padding: 0.5em 0 0.5em 3em;
+}
+ul[class*=perf-]:not(:first-of-type) {
+  border-top: 0.125em solid #6fb6cb;
+}
+ul[class*=perf-]::before {
+  content: attr(data-emoji);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -1em;
+  line-height: 2em;
+  height: 2em;
+}

@@ -1,374 +1,342 @@
 <!doctype html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<head>
-		<meta charset="utf-8">
+    <title>Planning & Implementing Meaningful UI Animations
+    </title>
+    <meta name="description" content="James Steinbach teaches how to plan meaningful interface animations and implement those animations with CSS.">
 
-		<title>Planning &amp; Implementing Meaningful UI Animations</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/custom.css">
 
-		<meta name="description" content="Learn how to plan meaningful interface animations and implement those animations with CSS.">
-		<meta name="author" content="James Steinbach">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? 'css/print/pdf.css'
+        : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        
+          <section >
+  <section>
+  <h1>Planning &amp; Implementing Meaningful UI Animations</h1>
+  <p><a href="https://jamessteinbach.com">James Steinbach</a> | <a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/jdsteinbach">@jdsteinbach</a></p>
+</section>
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<section>
+  <p class="big-p"><a href="http://jds.li/anim">jds.li/anim</a></p>
+</section>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<section>
+  <h2>Why Do We Animate Elements?</h2>
+  <ul>
+    <li class="fragment">Set a client&#8217;s site apart</li>
+    <li class="fragment">Make it &#8220;pop&#8221;</li>
+  </ul>
+</section>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+<section data-background="images/pop.gif"></section>
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+<section>
+  <h2>Why Do We Animate Elements?</h2>
+  <ul>
+    <li>Set a client&#8217;s site apart</li>
+    <li>Make it &#8220;pop&#8221;</li>
+    <li class="fragment">Show off dev skill</li>
+  </ul>
+</section>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+<section data-background="images/magic.gif"></section>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+<section>
+  <h2>Why Do We Animate Elements?</h2>
+  <ul>
+    <li>Set a client&#8217;s site apart</li>
+    <li>Make it &#8220;pop&#8221;</li>
+    <li>Show off dev skill</li>
+    <li class="fragment"><b>Communicate meaning about content</b></li>
+  </ul>
+</section>
 
-	<body>
+<section>
+  <h3>We Make Up Stories</h3>
+  <p>Whenever things happen,<br> we automatically invent a narrative<br> to explain those events.</p>
+  <p class="fragment"><i><a rel="noreferrer noopener nofollow" target="_blank" href="http://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc">post hoc ergo propter hoc</a></i></p>
+</section>
 
-		<div class="reveal">
+<section>
+  <h3>Animation Tells<br> the Right Story</h3>
+  <p>When we animate an interface correctly, we make sure users don&#8217;t make up the wrong story.</p>
+</section>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Planning &amp; Implementing Meaningful UI Animations</h1>
-					<p><a href="https://jamessteinbach.com">James Steinbach</a> | <a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/jdsteinbach">@jdsteinbach</a></p>
-				</section>
+<section>
+  <h2>What Does Animation Communicate?</h2>
+</section>
 
-				<section>
-					<p class="big-p"><a href="http://jds.li/anim">jds.li/anim</a></p>
-				</section>
+<section>
+  <h3>&#8220;Play with Me&#8221;</h3>
+  <ul>
+    <li class="fragment">Use motion to show that content is interactive.</li>
+    <li class="fragment">Connected to <code>:hover</code></li>
+    <li class="fragment">Links, inputs, buttons</li>
+  </ul>
+  <button class="submit-hover fragment"><span>Hover!</span></button>
+</section>
 
-				<section>
-					<section>
-						<h2>Why Do We Animate Elements?</h2>
-						<ul>
-							<li class="fragment">Set a client&#8217;s site apart</li>
-							<li class="fragment">Make it &#8220;pop&#8221;</li>
-						</ul>
-					</section>
+<section>
+  <h3>&#8220;Ya Done Good, Kid&#8221;</h3>
+  <ul>
+    <li class="fragment">Use motion to confirm the success/failure of a user&#8217;s action.</li>
+    <li class="fragment">Shaking submit button if fields don&#8217;t validate</li>
+  </ul>
+  <button class="submit-pulse fragment">Success!</button>
+  <button class="submit-shake fragment">Error!</button>
+</section>
 
-					<section data-background="images/pop.gif"></section>
+<section>
+  <h3>&#8220;We&#8217;re Connected&#8221;</h3>
+  <ul>
+    <li class="fragment">Use motion to show the relationship between pieces of content.</li>
+    <li class="fragment">Moving captions as carousel images move</li>
+    <li class="fragment">Transitioning help text as users hover over related elements</li>
+  </ul>
+</section>
 
-					<section>
-						<h2>Why Do We Animate Elements?</h2>
-						<ul>
-							<li>Set a client&#8217;s site apart</li>
-							<li>Make it &#8220;pop&#8221;</li>
-							<li class="fragment">Show off dev skill</li>
-						</ul>
-					 </section>
+<section>
+  <h3>&#8220;We&#8217;re Connected&#8221;</h3>
+  <div class="fragment">
+    <p data-height="500" data-theme-id="0" data-slug-hash="jEwVzB" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Hover + Flag" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/jEwVzB/">Hover + Flag</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
+  </div>
+</section>
 
- 					<section data-background="images/magic.gif"></section>
+<section>
+  <h3>&#8220;We&#8217;re Connected&#8221;</h3>
+  <div class="fragment" style="max-width:700px;margin-left:auto;margin-right:auto">
+    <p data-height="300" data-theme-id="0" data-slug-hash="uvzlx" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Flexbox" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/uvzlx/">Flexbox</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
+  </div>
+</section>
 
-					<section>
-						<h2>Why Do We Animate Elements?</h2>
-						<ul>
-							<li>Set a client&#8217;s site apart</li>
-							<li>Make it &#8220;pop&#8221;</li>
-							<li>Show off dev skill</li>
-							<li class="fragment"><b>Communicate meaning about content</b></li>
-						</ul>
-					 </section>
+<section>
+  <h3>&#8220;We&#8217;re Connected&#8221;</h3>
+  <div class="fragment">
+    <p data-height="500" data-theme-id="0" data-slug-hash="fDEgz" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Form Flip" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/fDEgz/">Form Flip</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
+  </div>
+</section>
 
-					 <section>
-					 	<h3>We Make Up Stories</h3>
-					 	<p>Whenever things happen,<br> we automatically invent a narrative<br> to explain those events.</p>
-					 	<p class="fragment"><i><a rel="noreferrer noopener nofollow" target="_blank" href="http://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc">post hoc ergo propter hoc</a></i></p>
-					 </section>
+<section>
+  <h3>&#8220;I&#8217;m Important&#8221;</h3>
+  <ul>
+    <li class="fragment">Use motion to show which pieces of content deserve the user&#8217;s attention.</li>
+    <li class="fragment">Growing CTA button</li>
+    <li class="fragment">Growing active form field</li>
+  </ul>
+  <form class="fragment" action="">
+    <input class="input-active" type="text" value="First Name">
+  </form>
+</section>
 
-					 <section>
-					 	<h3>Animation Tells<br> the Right Story</h3>
-					 	<p>When we animate an interface correctly, we make sure users don&#8217;t make up the wrong story.</p>
-					 </section>
-				</section>
+<section>
+  <h3>&#8220;I&#8217;m Important&#8221;</h3>
+  <div class="fragment">
+    <p data-height="500" data-theme-id="0" data-slug-hash="FbBDt" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Page Scroll Content Animation" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/FbBDt/">Page Scroll Content Animation</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
+  </div>
+</section>
 
-				<section>
-					<section>
-						<h2>What Does Animation Communicate?</h2>
-					</section>
+<section>
+  <h3>&#8220;I Come from &hellip;&#8221;</h3>
+  <ul>
+    <li class="fragment">Use motion to show the source of some content.</li>
+    <li class="fragment">Animating sub-menu on <code>:hover</code> of parent link</li>
+  </ul>
+</section>
 
-					<section>
-						<h3>&#8220;Play with Me&#8221;</h3>
-						<ul>
-							<li class="fragment">Use motion to show that content is interactive.</li>
-							<li class="fragment">Connected to <code>:hover</code></li>
-							<li class="fragment">Links, inputs, buttons</li>
-						</ul>
-						<button class="submit-hover fragment"><span>Hover!</span></button>
-					</section>
+<section>
+  <h3>&#8220;I Come from &hellip;&#8221;</h3>
+  <div class="fragment">
+    <p data-height="500" data-theme-id="0" data-slug-hash="ryecg" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Mobile Menu" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/ryecg/">Mobile Menu</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
+  </div>
+</section>
 
-					<section>
-						<h3>&#8220;Ya Done Good, Kid&#8221;</h3>
-						<ul>
-							<li class="fragment">Use motion to confirm the success/failure of a user&#8217;s action.</li>
-							<li class="fragment">Shaking submit button if fields don&#8217;t validate</li>
-						</ul>
-						<button class="submit-pulse fragment">Success!</button>
-						<button class="submit-shake fragment">Error!</button>
-					</section>
+<section>
+  <h3>&#8220;I Come from &hellip;&#8221;</h3>
+  <div class="fragment">
+    <p data-height="500" data-theme-id="0" data-slug-hash="ytHrl" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Offscreen Menu" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/ytHrl/">Offscreen Menu</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
+  </div>
+</section>
 
-					<section>
-						<h3>&#8220;We&#8217;re Connected&#8221;</h3>
-						<ul>
-							<li class="fragment">Use motion to show the relationship between pieces of content.</li>
-							<li class="fragment">Moving captions as carousel images move</li>
-							<li class="fragment">Transitioning help text as users hover over related elements</li>
-						</ul>
-					</section>
+<section>
+  <h3>&#8220;I Come from &hellip;&#8221;</h3>
+  <img class="fragment" src="images/mobile-menu.gif" alt="Mobile Menu Animation"/>
+</section>
 
-					<section>
-						<h3>&#8220;We&#8217;re Connected&#8221;</h3>
-						<div class="fragment">
-							<p data-height="500" data-theme-id="0" data-slug-hash="jEwVzB" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Hover + Flag" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/jEwVzB/">Hover + Flag</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
-						</div>
-					</section>
+<section>
+  <h3>&#8220;I&#8217;m Going &hellip;&#8221;</h3>
+  <ul>
+    <li class="fragment">Use motion to show the destination of some content.</li>
+    <li class="fragment">&#8220;Add to Cart&#8221; button</li>
+  </ul>
+</section>
 
-					<section>
-						<h3>&#8220;We&#8217;re Connected&#8221;</h3>
-						<div class="fragment" style="max-width:700px;margin-left:auto;margin-right:auto">
-							<p data-height="300" data-theme-id="0" data-slug-hash="uvzlx" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Flexbox" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/uvzlx/">Flexbox</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
-						</div>
-					</section>
+<section data-background="images/wishlist.gif" data-background-size="contain"></section>
 
-					<section>
-						<h3>&#8220;We&#8217;re Connected&#8221;</h3>
-						<div class="fragment">
-							<p data-height="500" data-theme-id="0" data-slug-hash="fDEgz" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Form Flip" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/fDEgz/">Form Flip</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
-						</div>
-					</section>
+<section>
+  <h3>&#8220;I&#8217;m Going &hellip;&#8221;</h3>
+  <div class="fragment">
+    <p data-height="500" data-theme-id="0" data-slug-hash="VadXXq" data-default-tab="result" data-user="fdanisko" data-embed-version="2" data-pen-title="Add to cart animation" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/fdanisko/pen/VadXXq/">Add to cart animation</a> by Filip Danisko (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/fdanisko">@fdanisko</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
+  </div>
+</section>
 
-					<section>
-						<h3>&#8220;I&#8217;m Important&#8221;</h3>
-						<ul>
-							<li class="fragment">Use motion to show which pieces of content deserve the user&#8217;s attention.</li>
-							<li class="fragment">Growing CTA button</li>
-							<li class="fragment">Growing active form field</li>
-						</ul>
-						<form class="fragment" action="">
-							<input class="input-active" type="text" value="First Name">
-						</form>
-					</section>
+<section>
+  <h2>How Do I Animate Well?</h2>
+</section>
 
-					<section>
-						<h3>&#8220;I&#8217;m Important&#8221;</h3>
-						<div class="fragment">
-							<p data-height="500" data-theme-id="0" data-slug-hash="FbBDt" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Page Scroll Content Animation" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/FbBDt/">Page Scroll Content Animation</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
-						</div>
-					</section>
+<section>
+  <h3>Give It Life</h3>
+  <iframe src="https://player.vimeo.com/video/93206523" width="500" height="198" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><small><a rel="noreferrer noopener nofollow" target="_blank" href="https://vimeo.com/93206523">The illusion of life</a> from <a rel="noreferrer noopener nofollow" target="_blank" href="https://vimeo.com/centodesign">cento lodigiani</a> on <a rel="noreferrer noopener nofollow" target="_blank" href="https://vimeo.com">Vimeo</a>.</small></p>
+</section>
 
-					<section>
-						<h3>&#8220;I Come from &hellip;&#8221;</h3>
-						<ul>
-							<li class="fragment">Use motion to show the source of some content.</li>
-							<li class="fragment">Animating sub-menu on <code>:hover</code> of parent link</li>
-						</ul>
-					</section>
+<section>
+  <h3>Easing Curves</h3>
+  <ul>
+    <li class="fragment">Linear motion is flat and lifeless.</li>
+    <li class="fragment">Easing brings an element of life to animations.</li>
+  </ul>
+</section>
 
-					<section>
-						<h3>&#8220;I Come from &hellip;&#8221;</h3>
-						<div class="fragment">
-							<p data-height="500" data-theme-id="0" data-slug-hash="ryecg" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Mobile Menu" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/ryecg/">Mobile Menu</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
-						</div>
-					</section>
+<section>
+  <figure class="sphere-linear">
+    <div class="sphere"></div>
+    <figcaption><code>animation-timing-function: linear;</code></figcaption>
+  </figure>
+  <figure class="sphere-ease-in fragment">
+    <div class="sphere"></div>
+    <figcaption><code>animation-timing-function: ease-in;</code></figcaption>
+  </figure>
+  <figure class="sphere-ease-out fragment">
+    <div class="sphere"></div>
+    <figcaption><code>animation-timing-function: ease-out;</code></figcaption>
+  </figure>
+  <figure class="sphere-ease-in-out fragment">
+    <div class="sphere"></div>
+    <figcaption><code>animation-timing-function: ease-in-out;</code></figcaption>
+  </figure>
+</section>
 
-					<section>
-						<h3>&#8220;I Come from &hellip;&#8221;</h3>
-						<div class="fragment">
-							<p data-height="500" data-theme-id="0" data-slug-hash="ytHrl" data-default-tab="result" data-user="jdsteinbach" data-embed-version="2" data-pen-title="Offscreen Menu" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/ytHrl/">Offscreen Menu</a> by James Steinbach (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
-						</div>
-					</section>
+<section>
+  <h3>Cubic Bezier Curves</h3>
+  <img src="images/cb1.jpg" alt="Image of a Cubic Bezier Curve">
+</section>
 
-					<section>
-						<h3>&#8220;I Come from &hellip;&#8221;</h3>
-						<img class="fragment" src="images/mobile-menu.gif" alt="Mobile Menu Animation"/>
-					</section>
+<section>
+  <h3>More Cubic Bezier Curves</h3>
+  <img src="images/cb2.jpg" alt="Image of another Cubic Bezier Curve">
+</section>
 
-					<section>
-						<h3>&#8220;I&#8217;m Going &hellip;&#8221;</h3>
-						<ul>
-							<li class="fragment">Use motion to show the destination of some content.</li>
-							<li class="fragment">&#8220;Add to Cart&#8221; button</li>
-						</ul>
-					</section>
+<section>
+  <h3>Building Your Own</h3>
+  <figure class="sphere-cubic-bezier">
+    <div class="sphere"></div>
+    <figcaption><code>animation-timing-function: <br>cubic-bezier(.6,-0.14,.77,1.29);</code></figcaption>
+  </figure>
+  <ul>
+    <li><a rel="noreferrer noopener nofollow" target="_blank" href="http://cubic-bezier.com/">Cubic-Bezier.com</a></li>
+    <li><a rel="noreferrer noopener nofollow" target="_blank" href="http://matthewlein.com/ceaser/">Ceaser</a></li>
+    <li><a rel="noreferrer noopener nofollow" target="_blank" href="http://ryanbrownhill.github.io/animation/fed/2015/05/09/easing-curves.html">Crafting Easing Curves for User Interfaces</a>,<br> Ryan Brownhill</li>
+  </ul>
+</section>
 
-					<section data-background="images/wishlist.gif" data-background-size="contain"></section>
+<section>
+  <h3>Make It Smooth</h3>
+  <blockquote><p>&#8220;do the performance its good ok&#8221;</p>
+  <footer>
+    <cite>
+      <a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/Tevko/status/600313265281998848">~ Tim</a>
+    </cite>
+  </footer></blockquote>
+</section>
 
-					<section>
-						<h3>&#8220;I&#8217;m Going &hellip;&#8221;</h3>
-						<div class="fragment">
-							<p data-height="500" data-theme-id="0" data-slug-hash="VadXXq" data-default-tab="result" data-user="fdanisko" data-embed-version="2" data-pen-title="Add to cart animation" class="codepen">See the Pen <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/fdanisko/pen/VadXXq/">Add to cart animation</a> by Filip Danisko (<a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/fdanisko">@fdanisko</a>) on <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io">CodePen</a>.</p>
-						</div>
-					</section>
-				</section>
+<section>
+  <h3>Make It Smooth</h3>
+  <ul class="perf-good" data-emoji="👍">
+    <li><code>opacity</code></li>
+    <li><code>transform</code></li>
+  </ul>
+  <ul class="perf-fair fragment" data-emoji="😐">
+    <li><code>[*-]color</code></li>
+  </ul>
+  <ul class="perf-bad fragment" data-emoji="😡">
+    <li><code>box-shadow</code></li>
+    <li><code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></li>
+    <li><code>margin</code>, <code>padding</code></li>
+    <li><code>font-size</code>, <code>border</code></li>
+    <li><code>height</code>, <code>width</code></li>
+  </ul>
 
-				<section>
-					<section>
-						<h2>How Do I Animate Well?</h2>
-					</section>
+  <p>Resources: <a rel="noreferrer noopener nofollow" target="_blank" href="http://csstriggers.com">CSS Triggers</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="http://jankfree.org">Jank Free</a></p>
+</section>
 
-					<section>
-						<h3>Give It Life</h3>
-						<iframe src="https://player.vimeo.com/video/93206523" width="500" height="198" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><small><a rel="noreferrer noopener nofollow" target="_blank" href="https://vimeo.com/93206523">The illusion of life</a> from <a rel="noreferrer noopener nofollow" target="_blank" href="https://vimeo.com/centodesign">cento lodigiani</a> on <a rel="noreferrer noopener nofollow" target="_blank" href="https://vimeo.com">Vimeo</a>.</small></p>
-					</section>
+<section>
+  <h3>Transitions vs. Animations</h3>
+</section>
 
-					<section>
-						<h3>Easing Curves</h3>
-						<ul>
-							<li class="fragment">Linear motion is flat and lifeless.</li>
-							<li class="fragment">Easing brings an element of life to animations.</li>
-						</ul>
-					</section>
+<section data-background="images/fight.gif"></section>
+<section>
+  <h3>Transitions vs. Animations</h3>
+  <ul>
+    <li class="fragment"><b>Transitions:</b> simple off/on state changes</li>
+    <li class="fragment"><b>Animations:</b> complex motion,<br> usually tied to a trigger event,<br> differing start/end states</li>
+  </ul>
+</section>
 
-					<section>
-						<figure class="sphere-linear">
-							<div class="sphere"></div>
-							<figcaption><code>animation-timing-function: linear;</code></figcaption>
-						</figure>
-						<figure class="sphere-ease-in fragment">
-							<div class="sphere"></div>
-							<figcaption><code>animation-timing-function: ease-in;</code></figcaption>
-						</figure>
-						<figure class="sphere-ease-out fragment">
-							<div class="sphere"></div>
-							<figcaption><code>animation-timing-function: ease-out;</code></figcaption>
-						</figure>
-						<figure class="sphere-ease-in-out fragment">
-							<div class="sphere"></div>
-							<figcaption><code>animation-timing-function: ease-in-out;</code></figcaption>
-						</figure>
-					</section>
+<section>
+  <h2>Resources</h2>
+  <ul>
+    <li>Rachel Nabors: <a rel="noreferrer noopener nofollow" target="_blank" href="https://animationatwork.com/"><i>Animation at Work</i></a>, <a rel="noreferrer noopener nofollow" target="_blank" href="http://rachelnabors.com/archive">blog</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/rachelnabors">Twitter</a></li>
+    <li>Val Head: <a rel="noreferrer noopener nofollow" target="_blank" href="http://cssanimationspocketguide.com/"><i>A Pocket Guide: CSS Animations</i></a>, <a rel="noreferrer noopener nofollow" target="_blank" href="http://valhead.com/blog/">blog</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="http://twitter.com/vlh">Twitter</a></li>
+    <li>Ryan Brownhill: <a rel="noreferrer noopener nofollow" target="_blank" href="http://ryanbrownhill.github.io/#🙇">blog</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/ryan_brownhill">Twitter</a></li>
+    <li>CSS Animation: <a rel="noreferrer noopener nofollow" target="_blank" href="http://cssanimation.rocks">site</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/animation">Twitter</a></li>
+    <li>Inspiration: <a rel="noreferrer noopener nofollow" target="_blank" href="http://capptivate.co/">Capptivate</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="http://hoverstat.es">Hover States</a></li>
+    <li><a rel="noreferrer noopener nofollow" target="_blank" href="http://markgeyer.com/pres/the-art-of-ui-animations/#">The Art of UI Animations</a>, Mark Geyer</li>
+    <li><a rel="noreferrer noopener nofollow" target="_blank" href="https://medium.com/@druchtie/animation-interfaces-design-2f039da75eeb">Prototyping Animation</a>, Danny Ruchtie</li>
+  </ul>
+</section>
 
-					<section>
-						<h3>Cubic Bezier Curves</h3>
-						<img src="images/cb1.jpg" alt="Image of a Cubic Bezier Curve">
-					</section>
+<section>
+  <h2>James Steinbach</h2>
+  <h3>Staff Front-End Engineer<br> at <a rel="noreferrer noopener nofollow" target="_blank" href="https://okta.com/">Okta</a></h3>
+  <h3><code>jdsteinbach</code></h3>
+  <h4><a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/jdsteinbach">Twitter</a> | <a rel="noreferrer noopener nofollow" target="_blank" href="https://github.com/jdsteinbach">Github</a> | <a href="https://jdsteinbach.com">Blog</a></h4>
+</section>
 
-					<section>
-						<h3>More Cubic Bezier Curves</h3>
-						<img src="images/cb2.jpg" alt="Image of another Cubic Bezier Curve">
-					</section>
+</section>
 
-					<section>
-						<h3>Building Your Own</h3>
-						<figure class="sphere-cubic-bezier">
-							<div class="sphere"></div>
-							<figcaption><code>animation-timing-function: <br>cubic-bezier(.6,-0.14,.77,1.29);</code></figcaption>
-						</figure>
-						<ul>
-							<li><a rel="noreferrer noopener nofollow" target="_blank" href="http://cubic-bezier.com/">Cubic-Bezier.com</a></li>
-							<li><a rel="noreferrer noopener nofollow" target="_blank" href="http://matthewlein.com/ceaser/">Ceaser</a></li>
-							<li><a rel="noreferrer noopener nofollow" target="_blank" href="http://ryanbrownhill.github.io/animation/fed/2015/05/09/easing-curves.html">Crafting Easing Curves for User Interfaces</a>,<br> Ryan Brownhill</li>
-						</ul>
-					</section>
+        
+      </div>
+    </div>
 
-					<section>
-						<h3>Make It Smooth</h3>
-						<blockquote><p>&#8220;do the performance its good ok&#8221;</p>
-						<footer>
-							<cite>
-								<a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/Tevko/status/600313265281998848">~ Tim</a>
-							</cite>
-						</footer></blockquote>
-					</section>
+    <script src="js/reveal.js"></script>
 
-					<section>
-						<h3>Make It Smooth</h3>
-						<ul class="perf-good" data-emoji="👍">
-							<li><code>opacity</code></li>
-							<li><code>transform</code></li>
-						</ul>
-						<ul class="perf-fair fragment" data-emoji="😐">
-							<li><code>[*-]color</code></li>
-						</ul>
-						<ul class="perf-bad fragment" data-emoji="😡">
-							<li><code>box-shadow</code></li>
-							<li><code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></li>
-							<li><code>margin</code>, <code>padding</code></li>
-							<li><code>font-size</code>, <code>border</code></li>
-							<li><code>height</code>, <code>width</code></li>
-						</ul>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        width: 960,
+        transition: 'fade'
+      });
+    </script>
 
-						<p>Resources: <a rel="noreferrer noopener nofollow" target="_blank" href="http://csstriggers.com">CSS Triggers</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="http://jankfree.org">Jank Free</a></p>
-					</section>
-
-					<section>
-						<h3>Transitions vs. Animations</h3>
-					</section>
-
-					<section data-background="images/fight.gif"></section>
-					<section>
-						<h3>Transitions vs. Animations</h3>
-						<ul>
-							<li class="fragment"><b>Transitions:</b> simple off/on state changes</li>
-							<li class="fragment"><b>Animations:</b> complex motion,<br> usually tied to a trigger event,<br> differing start/end states</li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<h2>Resources</h2>
-					<ul>
-						<li>Rachel Nabors: <a rel="noreferrer noopener nofollow" target="_blank" href="https://animationatwork.com/"><i>Animation at Work</i></a>, <a rel="noreferrer noopener nofollow" target="_blank" href="http://rachelnabors.com/archive">blog</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/rachelnabors">Twitter</a></li>
-						<li>Val Head: <a rel="noreferrer noopener nofollow" target="_blank" href="http://cssanimationspocketguide.com/"><i>A Pocket Guide: CSS Animations</i></a>, <a rel="noreferrer noopener nofollow" target="_blank" href="http://valhead.com/blog/">blog</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="http://twitter.com/vlh">Twitter</a></li>
-						<li>Ryan Brownhill: <a rel="noreferrer noopener nofollow" target="_blank" href="http://ryanbrownhill.github.io/#🙇">blog</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/ryan_brownhill">Twitter</a></li>
-						<li>CSS Animation: <a rel="noreferrer noopener nofollow" target="_blank" href="http://cssanimation.rocks">site</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com/animation">Twitter</a></li>
-						<li>Inspiration: <a rel="noreferrer noopener nofollow" target="_blank" href="http://capptivate.co/">Capptivate</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="http://hoverstat.es">Hover States</a></li>
-						<li><a rel="noreferrer noopener nofollow" target="_blank" href="http://markgeyer.com/pres/the-art-of-ui-animations/#">The Art of UI Animations</a>, Mark Geyer</li>
-						<li><a rel="noreferrer noopener nofollow" target="_blank" href="https://medium.com/@druchtie/animation-interfaces-design-2f039da75eeb">Prototyping Animation</a>, Danny Ruchtie</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>James Steinbach</h2>
-					<h3>UX Developer at <a rel="noreferrer noopener nofollow" target="_blank" href="https://dockyard.com/blog/authors/james-steinbach">DockYard</a></h3>
-					<h3><code>jdsteinbach</code></h3>
-					<h4><a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com">Twitter</a> | <a rel="noreferrer noopener nofollow" target="_blank" href="https://github.com/jdsteinbach">Github</a> | <a href="https://jdsteinbach.com">Blog</a></h4>
-				</section>
-
-			</div>
-
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-				width: 960,
-
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
-
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true }
-				]
-
-			});
-
-		</script>
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-43397146-5', 'auto'); ga('send', 'pageview');
-		</script>
-		<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-	</body>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  </body>
 </html>
