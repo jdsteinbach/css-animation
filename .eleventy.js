@@ -58,9 +58,7 @@ module.exports = eleventyConfig => {
   });
 
   eleventyConfig.addPassthroughCopy({
-    './node_modules/reveal.js/css/': 'css',
-    './node_modules/reveal.js/js/': 'js',
-    './node_modules/reveal.js/plugin/': 'plugin'
+    './node_modules/reveal.js/dist/': 'reveal',
   });
   eleventyConfig.addPassthroughCopy('src/images');
   eleventyConfig.addPassthroughCopy('src/webfonts');
