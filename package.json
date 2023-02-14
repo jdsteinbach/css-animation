@@ -30,14 +30,14 @@
   },
   "homepage": "https://github.com/jdsteinbach/css-animation#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "autoprefixer": "^10.4.12",
-    "cssnano": "^5.1.13",
+    "cssnano": "^5.1.14",
     "markdown-it": "^13.0.1",
     "markdown-it-highlightjs": "^4.0.1",
-    "postcss": "^8.4.17",
-    "sass": "^1.55.0"
+    "postcss": "^8.4.21",
+    "sass": "^1.58.1"
   },
   "dependencies": {
     "reveal.js": "^4.3.1"
