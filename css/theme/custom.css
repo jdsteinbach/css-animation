@@ -100,6 +100,8 @@ code {
   --r-link-color-hover: #94c9d8;
   --r-selection-background-color: #badce6;
   --r-selection-color: #fff;
+  --r-overlay-element-bg-color: 240, 240, 240;
+  --r-overlay-element-fg-color: 0, 0, 0;
 }
 
 .reveal-viewport {
